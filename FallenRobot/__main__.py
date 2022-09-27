@@ -219,24 +219,28 @@ def start(update: Update, context: CallbackContext):
         else:
             uptime = get_readable_time((time.time() - StartTime))
             m=update.effective_message
-            c=update.effective_chat
-            xD=m.reply_text(text="Hey {mention_html(user.id, html.escape(user.first_name))}!\n    how are you",chat_id=c.id, parse_mode=ParseMode.MARKDOWN)
-            time.sleep(2)
-            xD.edit_message_text(text="Let me prepare the start message for you", chat_id=c.id, parse_mode=ParseMode.MARKDOWM)
-            time.sleep(2)
-            xD.edit_message_text(text="🤍🤍", chat_id=c.id)
-            time.sleep(2)
-            xD.edit_message_text(text="🤍", chat_id=c.id)
-            time.sleep(2)
-            xD.delete()
-            m.reply_sticker(sticker_id="CAACAgUAAx0CXBwX3QACIW5jMw5Y1H8ued1c7w32g5jUsUALxwACYQUAAnxKYVaPQeNelhOrpikE", chat_id=c.id)
-            time.sleep(2)  
-            update.effective_message.reply_text(
-                PM_START_TEXT.format(dispatcher.bot.first_name, sql.num_users(), sql.num_chats(), uptime),
-                reply_markup=InlineKeyboardMarkup(buttons),
-                parse_mode=ParseMode.MARKDOWN,
-                timeout=60,
-            )
+	    c=update.effective_chat
+            try:
+	        xD=m.reply_text(text="Hey {mention_html(user.id, html.escape(user.first_name))}!\n    how are you",chat_id=c.id, parse_mode=ParseMode.MARKDOWN)
+	        time.sleep(2)
+	        xD.edit_message_text(text="Let me prepare the start message for you", chat_id=c.id, parse_mode=ParseMode.MARKDOWM)
+	        time.sleep(2)
+	        xD.edit_message_text(text="🤍🤍", chat_id=c.id)
+	        time.sleep(2)
+	        xD.edit_message_text(text="🤍", chat_id=c.id)
+	        time.sleep(2)
+	        xD.delete()
+	        m.reply_sticker(sticker_id="CAACAgUAAx0CXBwX3QACIW5jMw5Y1H8ued1c7w32g5jUsUALxwACYQUAAnxKYVaPQeNelhOrpikE", chat_id=c.id)
+	        time.sleep(2)
+            except Exception as e:
+	        LOGGER.debug(e)
+            else:
+                update.effective_message.reply_text(
+                    PM_START_TEXT.format(dispatcher.bot.first_name, sql.num_users(), sql.num_chats(), uptime),
+                    reply_markup=InlineKeyboardMarkup(buttons),
+                    parse_mode=ParseMode.MARKDOWN,
+                    timeout=60,
+                )
     else:
         update.effective_message.reply_photo(
             START_IMG,
