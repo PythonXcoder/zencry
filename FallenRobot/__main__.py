@@ -239,13 +239,12 @@ def start(update: Update, context: CallbackContext):
             except Exception as e:
             	LOGGER.debug(e)
             else:
-                update.effective_message.reply_text(
-                    umm = "Starting.."
-                    text = umm,
+                update.effective_message.reply(
+                    text = "Starting.."
                     asyncio.sleep(1)
-                    await umm.edit("Starting....)
+                    await text.edit("Starting....)
                     asyncio.sleep(1)
-                    await umm.delete()
+                    await text.delete()
                     okiee = await message.reply(
                     PM_START_TEXT.format(dispatcher.bot.first_name, sql.num_users(), sql.num_chats(), uptime),
                     reply_markup=InlineKeyboardMarkup(buttons),
