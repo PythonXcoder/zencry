@@ -240,6 +240,13 @@ def start(update: Update, context: CallbackContext):
             	LOGGER.debug(e)
             else:
                 update.effective_message.reply_text(
+                    umm = "Starting.."
+                    text = umm,
+                    asyncio.sleep(1)
+                    await umm.edit("Starting....)
+                    asyncio.sleep(1)
+                    await umm.delete()
+                    okiee = await message.reply(
                     PM_START_TEXT.format(dispatcher.bot.first_name, sql.num_users(), sql.num_chats(), uptime),
                     reply_markup=InlineKeyboardMarkup(buttons),
                     parse_mode=ParseMode.MARKDOWN,
