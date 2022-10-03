@@ -1,6 +1,7 @@
 import importlib
 import time
 import re
+import random
 from sys import argv
 from typing import Optional
 
@@ -220,8 +221,9 @@ def start(update: Update, context: CallbackContext):
             uptime = get_readable_time((time.time() - StartTime))
             m=update.effective_message
             c=update.effective_chat
+            lun=("Bete","Friend","Buddy","My Dear friend")
             try:
-            	xD=m.reply_text(f"Hey {mention_html(user.id, html.escape(user.first_name))}!\n    how are you",parse_mode=ParseMode.MARKDOWN)
+            	xD=m.reply_text(f"Hello *{random.choice(lun)}*,\n    how are you",parse_mode=ParseMode.MARKDOWN)
             	time.sleep(2)
             	xD.delete()
             	xD=m.reply_text("Let me prepare the start message for you")
