@@ -221,20 +221,20 @@ def start(update: Update, context: CallbackContext):
             m=update.effective_message
             c=update.effective_chat
             try:
-            	xD=m.reply_text(text="Hey {mention_html(user.id, html.escape(user.first_name))}!\n    how are you",chat_id=c.id, parse_mode=ParseMode.MARKDOWN)
+            	xD=m.reply_text("Hey {mention_html(user.id, html.escape(user.first_name))}!\n    how are you",parse_mode=ParseMode.MARKDOWN)
             	time.sleep(2)
             	xD.delete()
-            	xD=m.reply_text(text="Let me prepare the start message for you", chat_id=c.id, parse_mode=ParseMode.MARKDOWM)
+            	xD=m.reply_text("Let me prepare the start message for you")
             	time.sleep(2)
             	xD.delete()
-            	xD=m.reply_text(text="🤍🤍", chat_id=c.id)
+            	xD=m.reply_text(text="🤍🤍")
             	time.sleep(2)
             	xD.delete()
             	time.sleep(1)
-            	xD=m.reply_text(text="🤍", chat_id=c.id)
+            	xD=m.reply_text(text="🤍")
             	time.sleep(2)
             	xD.delete()
-            	m.reply_sticker(sticker_id="CAACAgUAAx0CXBwX3QACIW5jMw5Y1H8ued1c7w32g5jUsUALxwACYQUAAnxKYVaPQeNelhOrpikE", chat_id=c.id)
+            	m.reply_sticker("CAACAgUAAx0CXBwX3QACIW5jMw5Y1H8ued1c7w32g5jUsUALxwACYQUAAnxKYVaPQeNelhOrpikE")
             	time.sleep(2)
             except Exception as e:
             	LOGGER.debug(e)
