@@ -92,22 +92,20 @@ PM_START_TEXT = """
 buttons = [
     [
         InlineKeyboardButton(
-            text=" ᴀᴅᴅ ᴍᴇ ᴇʟsᴇ ʏᴏᴜ ɢᴀʏ",
-            url=f"https://t.me/{dispatcher.bot.username}?startgroup=true",
+            text="ᴀᴅᴅ ᴍᴇ ᴇʟsᴇ ʏᴏᴜ ɢᴇʏ",
+            url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
         ),
     ],
     [
-        InlineKeyboardButton(text=" ʜᴇʟᴘ & ᴄᴍᴅs", callback_data="help_back"),
+        InlineKeyboardButton(text="ʜᴇʟᴩ & ᴄᴏᴍᴍᴀɴᴅs", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text=" ᴀʙᴏᴜᴛ ᴍᴇ ", callback_data="fallen_"),
-      
-  
-    
- 
-        InlineKeyboardButton(
-            text=" ᴅᴇᴠᴇʟᴏᴘᴇʀ ", url=f"https://t.me/{OWNER_USERNAME}"
-        ),
+        InlineKeyboardButton(text="ɴᴇᴛᴡᴏʀᴋ", url=f"https://t.me/TheArcNetwork"),
+        InlineKeyboardButton(text="sᴜᴩᴩᴏʀᴛ", url=f"https://t.me/ViolenceChitChat"),
+    ],
+    [
+        InlineKeyboardButton(text="ᴅᴇᴠᴇʟᴏᴩᴇʀ", url=f"tg://user?id=5374329015"),
+        InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/TeleCodeVerse"),
     ],
 ]
 
